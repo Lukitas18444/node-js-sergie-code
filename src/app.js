@@ -1,9 +1,16 @@
-//una funcion agnostica autoejecutada
+
+const {envs} = require ('./config/env')
+const {startServer} = require('./server/server')
+
 const main = () =>{
-    console.log('Aqui comenzaremos el servidor')
+    startServer({
+        port: envs.PORT,
+        public_path: envs.PUBLIC_PATH
+    })
 }
 
 
+//una funcion agnostica autoejecutada
 (async () => {
     main() 
 })()
