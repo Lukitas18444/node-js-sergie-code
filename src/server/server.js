@@ -12,7 +12,7 @@ const startServer = (options) =>{
     
     app.get ('/:any' , (req, res) =>{
         const indexPath = path.join(__dirname + `../../../${public_path}/index.html`)
-        res.sendFile(indexPath)
+        res.send(indexPath)
     } )
 
     app.listen(port, () => {
